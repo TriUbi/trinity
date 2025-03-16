@@ -1,4 +1,4 @@
-#  Project, JUST FOR FUN
+#  Project, JUST FOR FUN, TAKE IT IF YOU WANT 😁💜
 
 ## What technologies are used for this project?
 
