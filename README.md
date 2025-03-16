@@ -1,4 +1,4 @@
-#  Project, JUST FOR FUN, TAKE IT IF YOU WANT 😁💜
+#  Project, JUST FOR FUN, TESTING TAILWIND
 
 ## What technologies are used for this project?
 
