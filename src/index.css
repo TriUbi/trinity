@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,35 +7,35 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
+    --background: 220 45% 10%;
+    --foreground: 210 40% 98%;
     
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
     
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
     
-    --primary: 215 100% 30%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 195 84% 50%;
+    --primary-foreground: 222 47% 11%;
     
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
     
-    --muted: 210 40% 96%;
-    --muted-foreground: 220 10% 46%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
     
-    --accent: 215 100% 35%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 192 100% 45%;
+    --accent-foreground: 222 47% 11%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
     
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 222 47% 11%;
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    --ring: 195 84% 50%;
     
-    --radius: 0.75rem;
+    --radius: 0.5rem;
   }
   
   * {
@@ -50,15 +50,19 @@
   html {
     scroll-behavior: smooth;
   }
+
+  code, pre {
+    font-family: 'Fira Code', monospace;
+  }
 }
 
 @layer utilities {
   .glass {
-    @apply backdrop-blur-lg bg-white/70 border border-white/20 shadow-lg;
+    @apply backdrop-blur-lg bg-white/5 border border-white/10 shadow-md;
   }
   
   .glass-dark {
-    @apply backdrop-blur-lg bg-primary/10 border border-primary/20 shadow-lg;
+    @apply backdrop-blur-lg bg-black/30 border border-primary/20 shadow-md;
   }
   
   .text-balance {
@@ -66,7 +70,11 @@
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
+  }
+  
+  .tech-box {
+    @apply bg-secondary/80 px-2 py-1 rounded font-mono text-xs;
   }
 }
 
@@ -117,6 +125,16 @@
   animation: float 6s ease-in-out infinite;
 }
 
+.typing-cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 /* Page transitions */
 .page-enter {
   opacity: 0;
@@ -159,32 +177,54 @@
 
 /* Button styles */
 .btn-primary {
-  @apply px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium transition-all duration-300 
-         hover:bg-primary/90 hover:shadow-md active:scale-[0.98] focus:outline-none focus:ring-2 
-         focus:ring-primary/20 focus:ring-offset-2;
+  @apply px-6 py-3 rounded-md bg-primary text-primary-foreground font-medium transition-all duration-300 
+         shadow-neon hover:shadow-neon-strong hover:bg-primary/90 active:scale-[0.98] focus:outline-none;
 }
 
 .btn-secondary {
-  @apply px-6 py-3 rounded-lg bg-secondary text-secondary-foreground font-medium transition-all duration-300 
-         hover:bg-secondary/80 active:scale-[0.98] focus:outline-none focus:ring-2 
-         focus:ring-secondary/40 focus:ring-offset-2;
+  @apply px-6 py-3 rounded-md bg-secondary text-secondary-foreground font-medium transition-all duration-300 
+         hover:bg-secondary/80 active:scale-[0.98] focus:outline-none border border-secondary/80;
 }
 
 .btn-outline {
-  @apply px-6 py-3 rounded-lg border border-primary text-primary font-medium transition-all duration-300 
-         hover:bg-primary/10 active:scale-[0.98] focus:outline-none focus:ring-2 
-         focus:ring-primary/20 focus:ring-offset-2;
+  @apply px-6 py-3 rounded-md border border-primary text-primary font-medium transition-all duration-300 
+         hover:bg-primary/10 active:scale-[0.98] focus:outline-none;
 }
 
 /* Card styles */
 .card {
-  @apply rounded-2xl overflow-hidden bg-card p-6 shadow-sm transition-all duration-300 hover:shadow-md;
+  @apply rounded-md overflow-hidden bg-card p-6 border border-border/50 transition-all duration-300;
 }
 
 .card-hover {
-  @apply hover:translate-y-[-5px];
+  @apply hover:border-primary/50 hover:shadow-neon;
 }
 
 .card-glass {
-  @apply rounded-2xl overflow-hidden glass p-6 transition-all duration-300 hover:shadow-md;
+  @apply rounded-md overflow-hidden glass p-6 transition-all duration-300;
+}
+
+/* Code snippet styling */
+.code-snippet {
+  @apply bg-secondary/50 p-4 rounded-md font-mono text-sm overflow-x-auto border border-border;
+}
+
+.code-tag {
+  @apply text-yellow-400;
+}
+
+.code-property {
+  @apply text-cyan-400;
+}
+
+.code-value {
+  @apply text-green-400;
+}
+
+.code-punctuation {
+  @apply text-muted-foreground;
+}
+
+.code-comment {
+  @apply text-muted-foreground;
 }

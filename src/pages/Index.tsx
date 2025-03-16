@@ -1,35 +1,48 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ArrowRight, Globe, Zap, BarChart, Sparkles, Users } from 'lucide-react';
+import { ChevronRight, ArrowRight, Code, Zap, BarChart, Sparkles, Users, Terminal } from 'lucide-react';
 import { useAnimation } from '../contexts/AnimationContext';
 
 const Index: React.FC = () => {
   const { isAnimating } = useAnimation();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [titleIndex, setTitleIndex] = useState(0);
+  const titles = ["Webbplatser", "Design", "Konvertering", "Teknologi"];
   
   useEffect(() => {
     setIsLoaded(true);
+    
+    const titleInterval = setInterval(() => {
+      setTitleIndex((prev) => (prev + 1) % titles.length);
+    }, 3000);
+    
+    return () => clearInterval(titleInterval);
   }, []);
   
   return (
-    <div className={`min-h-screen transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
+    <div className={`min-h-screen transition-opacity duration-300 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20 pb-32">
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent" />
-        </div>
+      <section className="relative min-h-screen flex items-center pt-24 pb-32">
+        <div className="absolute inset-0 z-0 bg-code-bg bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-background via-background/90 to-background"></div>
         
         <div className="container mx-auto px-4 md:px-6 z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className={`space-y-8 transition-all duration-1000 delay-100 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div>
-                <div className="inline-block mb-3 bg-primary/10 px-3 py-1 rounded-full text-sm font-medium text-primary">
-                  Modernisering av webbplatser
+                <div className="inline-flex items-center mb-3 bg-secondary/80 px-3 py-1 rounded text-sm font-medium text-primary space-x-2">
+                  <Code size={16} />
+                  <span>Modernisering av webbplatser</span>
                 </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-balance mb-4">
-                  Ge din webbplats ett <span className="text-gradient">Glow Up</span> som gör skillnad
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-balance mb-6">
+                  Glow<span className="text-primary">Up</span>
                 </h1>
+                <h2 className="text-3xl md:text-4xl font-semibold mb-4 h-12">
+                  <span className="text-gradient typing-cursor">
+                    {titles[titleIndex]}
+                  </span>
+                </h2>
                 <p className="text-lg text-muted-foreground text-balance">
                   Vi hjälper startups och småföretag att förbättra sina webbplatser med professionella designlösningar som ökar konvertering och kundengagemang.
                 </p>
@@ -80,16 +93,41 @@ const Index: React.FC = () => {
             </div>
             
             <div className={`relative transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <div className="relative z-10 rounded-2xl overflow-hidden border border-border shadow-glossy float-animation">
-                <img 
-                  src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
-                  alt="GlowUp Design Process" 
-                  className="w-full h-auto rounded-2xl"
-                />
+              <div className="code-snippet">
+                <pre className="text-xs md:text-sm">
+                  <span className="code-comment">// Din webbplats förtjänar en Glow Up</span>
+                  <br />
+                  <span className="code-tag">const</span> <span className="text-primary">GlowUp</span> = <span className="code-punctuation">{'{'}</span>
+                  <br />
+                  {'  '}<span className="code-property">mission</span><span className="code-punctuation">:</span> <span className="code-value">'Förbättra din online närvaro'</span><span className="code-punctuation">,</span>
+                  <br />
+                  {'  '}<span className="code-property">design</span><span className="code-punctuation">:</span> <span className="code-value">'Modern och responsiv'</span><span className="code-punctuation">,</span>
+                  <br />
+                  {'  '}<span className="code-property">konvertering</span><span className="code-punctuation">:</span> <span className="code-value">'Optimerad för resultat'</span><span className="code-punctuation">,</span>
+                  <br />
+                  {'  '}<span className="code-property">process</span><span className="code-punctuation">:</span> <span className="code-tag">function</span><span className="code-punctuation">() {'{'}</span>
+                  <br />
+                  {'    '}<span className="code-tag">return</span> <span className="code-punctuation">[</span>
+                  <br />
+                  {'      '}<span className="code-value">'Välj plan'</span><span className="code-punctuation">,</span>
+                  <br />
+                  {'      '}<span className="code-value">'Vi gör jobbet'</span><span className="code-punctuation">,</span>
+                  <br />
+                  {'      '}<span className="code-value">'Din webbplats skiner'</span>
+                  <br />
+                  {'    '}<span className="code-punctuation">];</span>
+                  <br />
+                  {'  '}<span className="code-punctuation">{'}'}</span>
+                  <br />
+                  <span className="code-punctuation">{'}'}</span><span className="code-punctuation">;</span>
+                  <br /><br />
+                  <span className="code-tag">export default</span> <span className="text-primary">GlowUp</span><span className="code-punctuation">;</span>
+                </pre>
               </div>
-              <div className="absolute -bottom-6 -left-6 z-20 glass p-4 rounded-xl shadow-md">
+              
+              <div className="absolute -bottom-6 -left-6 z-20 glass p-4 rounded-md shadow-neon">
                 <div className="flex items-center space-x-4">
-                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                  <div className="w-10 h-10 bg-secondary rounded-md flex items-center justify-center text-primary">
                     <Sparkles size={20} />
                   </div>
                   <div>
@@ -98,14 +136,15 @@ const Index: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="absolute -top-6 -right-6 z-20 glass p-4 rounded-xl shadow-md">
+              
+              <div className="absolute -top-6 -right-6 z-20 glass p-4 rounded-md shadow-neon">
                 <div className="flex items-center space-x-4">
-                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
-                    <Users size={20} />
+                  <div className="w-10 h-10 bg-secondary rounded-md flex items-center justify-center text-primary">
+                    <Terminal size={20} />
                   </div>
                   <div>
-                    <div className="text-sm font-medium">Nöjda kunder</div>
-                    <div className="text-xs text-muted-foreground">95% kundnöjdhet</div>
+                    <div className="text-sm font-medium">Modernt kodad</div>
+                    <div className="text-xs text-muted-foreground">Med senaste teknologier</div>
                   </div>
                 </div>
               </div>
@@ -115,11 +154,11 @@ const Index: React.FC = () => {
       </section>
       
       {/* Features section */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-20 bg-secondary/20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
             <h2 className="text-3xl font-bold leading-tight tracking-tight">
-              Varför välja GlowUp för din webbplats?
+              Varför välja <span className="text-primary">GlowUp</span> för din webbplats?
             </h2>
             <p className="text-muted-foreground">
               Vi kombinerar modern design med funktionalitet för att skapa webbplatser som ger resultat.
@@ -130,9 +169,9 @@ const Index: React.FC = () => {
             {features.map((feature, index) => (
               <div 
                 key={index} 
-                className="card bg-background hover:shadow-md transition-all duration-300"
+                className="card bg-card hover:shadow-neon card-hover transition-all duration-300"
               >
-                <div className="p-3 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5">
+                <div className="p-3 w-12 h-12 rounded-md bg-secondary flex items-center justify-center text-primary mb-5">
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-2">
@@ -150,7 +189,7 @@ const Index: React.FC = () => {
       {/* CTA Section */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-radial from-secondary/20 via-transparent to-transparent" />
         </div>
         
         <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -166,6 +205,18 @@ const Index: React.FC = () => {
             </Link>
           </div>
         </div>
+        
+        <div className="absolute bottom-4 right-4 text-xs text-muted-foreground/50 bg-background/50 p-2 rounded-md glass">
+          <div className="flex items-center gap-2">
+            <span>Psst... denna sida är byggd med</span>
+            <div className="flex gap-1">
+              <span className="tech-box">React</span>
+              <span className="tech-box">TypeScript</span>
+              <span className="tech-box">Tailwind</span>
+            </div>
+            <span>❤️</span>
+          </div>
+        </div>
       </section>
     </div>
   );
@@ -176,7 +227,7 @@ const features = [
   {
     title: "Modern design",
     description: "Vi skapar webbplatser med modern, responsiv design som fungerar på alla enheter.",
-    icon: <Globe size={24} />,
+    icon: <Code size={24} />,
   },
   {
     title: "Snabb leverans",
@@ -201,7 +252,7 @@ const features = [
   {
     title: "Anpassningsbar",
     description: "Våra lösningar är skräddarsydda för att passa just ditt företags unika behov och mål.",
-    icon: <Sparkles size={24} />,
+    icon: <Terminal size={24} />,
   },
 ];
 

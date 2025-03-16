@@ -87,23 +87,39 @@ export default {
           to: {
             backgroundPosition: '-200% 0'
           }
+        },
+        'glow': {
+          '0%': {
+            boxShadow: '0 0 5px rgba(42, 157, 214, 0.5)'
+          },
+          '50%': {
+            boxShadow: '0 0 20px rgba(42, 157, 214, 0.8)'
+          },
+          '100%': {
+            boxShadow: '0 0 5px rgba(42, 157, 214, 0.5)'
+          }
         }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-        'shimmer': 'shimmer 2s linear infinite'
+        'shimmer': 'shimmer 2s linear infinite',
+        'glow': 'glow 3s ease-in-out infinite'
 			},
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'shimmer': 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%)',
+        'code-bg': 'url("/lovable-uploads/fa97611e-193c-4aee-94d9-5d91ca5c016b.png")'
       },
       boxShadow: {
         'soft': '0 2px 15px rgba(0, 0, 0, 0.05)',
         'glossy': '0 5px 15px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.05)',
+        'neon': '0 0 5px rgba(42, 157, 214, 0.5), 0 0 20px rgba(42, 157, 214, 0.3)',
+        'neon-strong': '0 0 10px rgba(42, 157, 214, 0.7), 0 0 30px rgba(42, 157, 214, 0.5)'
       },
       fontFamily: {
         'sans': ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
+        'mono': ['Fira Code', 'Consolas', 'Monaco', 'Courier New', 'monospace'],
       },
 		}
 	},

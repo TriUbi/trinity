@@ -36,7 +36,7 @@ export const AnimationProvider: React.FC<AnimationProviderProps> = ({ children }
     startTransition();
     const timer = setTimeout(() => {
       endTransition();
-    }, 500);
+    }, 300); // Snabbare animation
 
     return () => clearTimeout(timer);
   }, [location.pathname]);
