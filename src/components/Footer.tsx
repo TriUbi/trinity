@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="space-y-4">
             <Link to="/" className="text-2xl font-bold text-primary tracking-tight">
-              Glow<span className="text-foreground">Up</span>
+              Trinity<span className="text-foreground">Tech</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               Vi hjälper startups och småföretag att förbättra sina webbplatser med innovativa och moderna webbdesigner.
@@ -94,7 +94,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={16} className="text-primary" />
-                <span className="text-sm text-muted-foreground">info@glowup.se</span>
+                <span className="text-sm text-muted-foreground">info@trinitytech.se</span>
               </li>
               <li className="flex items-center space-x-3">
                 <MapPin size={16} className="text-primary" />
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-border mt-10 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              © {currentYear} GlowUp. Alla rättigheter förbehållna.
+              © {currentYear} Trinity Tech. Alla rättigheter förbehållna.
             </p>
             <div className="mt-4 md:mt-0">
               <p className="text-xs text-muted-foreground">

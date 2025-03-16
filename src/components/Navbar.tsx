@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
             to="/" 
             className="text-2xl font-bold text-primary tracking-tight transition-opacity duration-300"
           >
-            Glow<span className="text-foreground">Up</span>
+            Trinity<span className="text-foreground">Tech</span>
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">

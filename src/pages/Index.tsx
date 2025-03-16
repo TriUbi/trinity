@@ -36,7 +36,7 @@ const Index: React.FC = () => {
                   <span>Modernisering av webbplatser</span>
                 </div>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-balance mb-6">
-                  Glow<span className="text-primary">Up</span>
+                  Trinity<span className="text-primary">Tech</span>
                 </h1>
                 <h2 className="text-3xl md:text-4xl font-semibold mb-4 h-12">
                   <span className="text-gradient typing-cursor">
@@ -44,13 +44,13 @@ const Index: React.FC = () => {
                   </span>
                 </h2>
                 <p className="text-lg text-muted-foreground text-balance">
-                  Vi hjälper startups och småföretag att förbättra sina webbplatser med professionella designlösningar som ökar konvertering och kundengagemang.
+                  Vi hjälper startups och småföretag att förbättra sina webbplatser med Glow Up planer som ökar konvertering och kundengagemang.
                 </p>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/plans" className="btn-primary inline-flex items-center">
-                  Se våra planer <ChevronRight className="ml-1" size={18} />
+                  Se våra Glow Up planer <ChevronRight className="ml-1" size={18} />
                 </Link>
                 <Link to="/how-it-works" className="btn-outline inline-flex items-center">
                   Läs mer om processen
@@ -97,7 +97,7 @@ const Index: React.FC = () => {
                 <pre className="text-xs md:text-sm">
                   <span className="code-comment">// Din webbplats förtjänar en Glow Up</span>
                   <br />
-                  <span className="code-tag">const</span> <span className="text-primary">GlowUp</span> = <span className="code-punctuation">{'{'}</span>
+                  <span className="code-tag">const</span> <span className="text-primary">GlowUpPlan</span> = <span className="code-punctuation">{'{'}</span>
                   <br />
                   {'  '}<span className="code-property">mission</span><span className="code-punctuation">:</span> <span className="code-value">'Förbättra din online närvaro'</span><span className="code-punctuation">,</span>
                   <br />
@@ -121,7 +121,7 @@ const Index: React.FC = () => {
                   <br />
                   <span className="code-punctuation">{'}'}</span><span className="code-punctuation">;</span>
                   <br /><br />
-                  <span className="code-tag">export default</span> <span className="text-primary">GlowUp</span><span className="code-punctuation">;</span>
+                  <span className="code-tag">export default</span> <span className="text-primary">GlowUpPlan</span><span className="code-punctuation">;</span>
                 </pre>
               </div>
               
@@ -158,10 +158,10 @@ const Index: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
             <h2 className="text-3xl font-bold leading-tight tracking-tight">
-              Varför välja <span className="text-primary">GlowUp</span> för din webbplats?
+              Varför välja <span className="text-primary">Trinity</span> för din webbplats?
             </h2>
             <p className="text-muted-foreground">
-              Vi kombinerar modern design med funktionalitet för att skapa webbplatser som ger resultat.
+              Vi kombinerar modern design med funktionalitet för att skapa webbplatser som ger resultat genom våra Glow Up planer.
             </p>
           </div>
           
@@ -195,7 +195,7 @@ const Index: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Redo att förbättra din webbplats?
+              Redo att ge din webbplats en Glow Up?
             </h2>
             <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
               Välj den Glow Up plan som passar dina behov och börja förvandlingen av din webbplats redan idag.
@@ -231,7 +231,7 @@ const features = [
   },
   {
     title: "Snabb leverans",
-    description: "Våra GlowUp-planer levereras snabbt så att du kan börja attrahera fler kunder.",
+    description: "Våra Glow Up-planer levereras snabbt så att du kan börja attrahera fler kunder.",
     icon: <Zap size={24} />,
   },
   {
@@ -251,7 +251,7 @@ const features = [
   },
   {
     title: "Anpassningsbar",
-    description: "Våra lösningar är skräddarsydda för att passa just ditt företags unika behov och mål.",
+    description: "Våra Glow Up-lösningar är skräddarsydda för att passa just ditt företags unika behov och mål.",
     icon: <Terminal size={24} />,
   },
 ];
